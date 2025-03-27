@@ -1,12 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, X, Clock, Calendar, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/components/ui/use-toast';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 
 // Mock data for services
 const services = [
@@ -218,10 +215,8 @@ const SearchPage = () => {
   }, [searchedText, priceFilter, serviceFilter, expFilter]);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
-      
-      <main className="flex-1 bg-background">
+    <div className="flex flex-col min-h-screen bg-background">
+      <main className="flex-1">
         <div className="search-container">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-3">Find Professional Services</h1>
@@ -441,8 +436,6 @@ const SearchPage = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };
